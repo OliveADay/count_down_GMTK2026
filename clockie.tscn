@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://d4dohmq56ekoo"]
+
+[ext_resource type="Script" uid="uid://bmqlcjpbmpg1y" path="res://clockie.gd" id="1_fbxie"]
+[ext_resource type="Texture2D" uid="uid://bnye1kaqggxp6" path="res://clockie-Sheet.png" id="1_t46c1"]
+[ext_resource type="Script" uid="uid://eqhpgdl3hf5n" path="res://hands.gd" id="3_crgoy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fbxie"]
+load_path = "res://.godot/imported/clockie-Sheet.png-e2399572052dd3976e4c0136e860a5b2.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ao1p"]
+size = Vector2(20, 28)
+
+[node name="Clockie" type="CharacterBody2D" unique_id=942821191]
+position = Vector2(38, 23)
+script = ExtResource("1_fbxie")
+metadata/_edit_group_ = true
+
+[node name="body" type="Sprite2D" parent="." unique_id=1276587280]
+texture_filter = 1
+texture = ExtResource("1_t46c1")
+hframes = 2
+vframes = 2
+script = ExtResource("3_crgoy")
+
+[node name="min_hand" type="Sprite2D" parent="body" unique_id=420157294]
+z_index = 1
+texture = SubResource("CompressedTexture2D_fbxie")
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="hour_hand" type="Sprite2D" parent="body" unique_id=1078303060]
+texture = ExtResource("1_t46c1")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879324713]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_4ao1p")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1670834613]
+z_index = -1
+offset_left = -277.0
+offset_top = -218.0
+offset_right = 397.0
+offset_bottom = 277.0

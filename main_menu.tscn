@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cbiillkvp801l"]
+
+[ext_resource type="Theme" uid="uid://c457voxew7rbf" path="res://main.tres" id="1_06t4h"]
+
+[node name="main_menu" type="Node2D" unique_id=1462716554]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1306004853]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1139411238]
+offset_right = 256.0
+offset_bottom = 144.0
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1409831884]
+texture_filter = 1
+offset_right = 256.0
+offset_bottom = 23.0
+theme = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 15
+text = "Clockie's Great Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
