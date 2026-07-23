@@ -11,8 +11,12 @@ load_path = "res://.godot/imported/clockie-Sheet.png-e2399572052dd3976e4c0136e86
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ao1p"]
 size = Vector2(20, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
+size = Vector2(24, 32)
+
 [node name="Clockie" type="CharacterBody2D" unique_id=942821191]
 position = Vector2(38, 23)
+collision_layer = 3
 script = ExtResource("1_fbxie")
 metadata/_edit_group_ = true
 
@@ -44,4 +48,14 @@ shape = SubResource("RectangleShape2D_4ao1p")
 rect = Rect2(-10, -12, 20, 28)
 script = ExtResource("4_d7fyl")
 
+[node name="safe_check" type="Area2D" parent="." unique_id=1609002588]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="safe_check" unique_id=1010700861]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_3xd07")
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="VisibleOnScreenNotifier2D" method="_on_screen_exited"]
+[connection signal="area_entered" from="safe_check" to="." method="_on_safe_check_area_entered"]
+[connection signal="area_exited" from="safe_check" to="." method="_on_safe_check_area_exited"]

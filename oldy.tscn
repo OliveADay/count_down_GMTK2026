@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://6701dftrjmie"]
+
+[ext_resource type="Texture2D" uid="uid://cq70l0lpidi8l" path="res://oldy.png" id="1_dpdrg"]
+[ext_resource type="Theme" uid="uid://c457voxew7rbf" path="res://main.tres" id="2_g2r58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdqbg"]
+size = Vector2(49, 38)
+
+[sub_resource type="Animation" id="Animation_ikmr5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g2r58"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.9333334, 4.94),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1, 1), Vector2(0.7, 0.7), Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 4.51), Vector2(0, 0), Vector2(0, 4.51)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikmr5"]
+_data = {
+&"RESET": SubResource("Animation_ikmr5"),
+&"idle": SubResource("Animation_g2r58")
+}
+
+[node name="oldy" type="Area2D" unique_id=1314802920]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=4245287]
+texture_filter = 1
+texture = ExtResource("1_dpdrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801454512]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_vdqbg")
+
+[node name="Label" type="Label" parent="." unique_id=1318623576]
+offset_left = -10.0
+offset_top = -25.0
+offset_right = 30.0
+offset_bottom = -2.0
+theme = ExtResource("2_g2r58")
+theme_override_font_sizes/font_size = 12
+text = "[e]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1616493281]
+libraries/ = SubResource("AnimationLibrary_ikmr5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=861478555]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=610348311]
+offset_right = 256.0
+offset_bottom = 42.0
+color = Color(0, 0, 0, 1)

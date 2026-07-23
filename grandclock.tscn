@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dupm34ibyqmjs"]
+
+[ext_resource type="Texture2D" uid="uid://ct35a87piakwo" path="res://grandclock-Sheet.png" id="1_o6tli"]
+[ext_resource type="Script" uid="uid://do7vq08ie6j2v" path="res://grandfather.gd" id="1_swecw"]
+[ext_resource type="Theme" uid="uid://c457voxew7rbf" path="res://main.tres" id="2_l8cup"]
+[ext_resource type="Script" uid="uid://eqhpgdl3hf5n" path="res://hands.gd" id="2_swecw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
+size = Vector2(40, 64)
+
+[node name="Grandclock" type="Area2D" unique_id=2004148058]
+z_index = -1
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_swecw")
+metadata/_edit_group_ = true
+
+[node name="main" type="Sprite2D" parent="." unique_id=1723050574]
+texture = ExtResource("1_o6tli")
+hframes = 3
+script = ExtResource("2_swecw")
+stop_bit = -359
+
+[node name="min_hand" type="Sprite2D" parent="main" unique_id=169599037]
+position = Vector2(-1, -19)
+texture = ExtResource("1_o6tli")
+hframes = 3
+frame = 2
+
+[node name="hour_hand" type="Sprite2D" parent="main" unique_id=1105735013]
+position = Vector2(-1, -19)
+texture = ExtResource("1_o6tli")
+hframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1499247110]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_3xd07")
+
+[node name="Label" type="Label" parent="." unique_id=670260619]
+visible = false
+offset_left = -51.0
+offset_top = -19.0
+offset_right = 55.0
+offset_bottom = 4.0
+theme = ExtResource("2_l8cup")
+theme_override_font_sizes/font_size = 10
+text = "repair[e]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

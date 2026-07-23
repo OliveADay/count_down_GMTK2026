@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://cbiillkvp801l"]
 
 [ext_resource type="Theme" uid="uid://c457voxew7rbf" path="res://main.tres" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://6oex1tx3r2fh" path="res://main_menu_handler.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dto47oudnl6bd" path="res://instructions_1.png" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://b4kev8eb2awar" path="res://instructions_2.png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://ifqdu4qg3qe6" path="res://instructions_3.png" id="5_glbon"]
 
 [node name="main_menu" type="Node2D" unique_id=1462716554]
+script = ExtResource("1_7vrkn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1306004853]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1139411238]
 offset_right = 256.0
 offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1409831884]
 texture_filter = 1
@@ -19,3 +25,161 @@ theme_override_font_sizes/font_size = 15
 text = "Clockie's Great Quest"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="play_b" type="Button" parent="CanvasLayer" unique_id=117480046]
+texture_filter = 1
+offset_left = 98.0
+offset_top = 25.0
+offset_right = 154.0
+offset_bottom = 49.0
+theme = ExtResource("1_06t4h")
+theme_type_variation = &"FlatButton"
+text = "play"
+
+[node name="instructions_b" type="Button" parent="CanvasLayer" unique_id=966425293]
+texture_filter = 1
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 72.0
+theme = ExtResource("1_06t4h")
+theme_type_variation = &"FlatButton"
+text = "instructions"
+
+[node name="instructions_1" type="Control" parent="CanvasLayer" unique_id=494086326]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/instructions_1" unique_id=973674012]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 256.0
+offset_bottom = 162.0
+texture = ExtResource("3_jix8l")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/instructions_1" unique_id=174616266]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -19.0
+offset_right = 265.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
+
+[node name="evil" type="Label" parent="CanvasLayer/instructions_1" unique_id=827989303]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_06t4h")
+text = "dr.evil destroyed the
+clock towers that
+stop all clocks from
+dying when their
+time runs out"
+
+[node name="next_1" type="Button" parent="CanvasLayer/instructions_1" unique_id=659186395]
+texture_filter = 1
+layout_mode = 0
+offset_top = 120.0
+offset_right = 67.0
+offset_bottom = 144.0
+theme = ExtResource("1_06t4h")
+theme_type_variation = &"FlatButton"
+text = "next"
+
+[node name="instructions_2" type="Control" parent="CanvasLayer" unique_id=659724705]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/instructions_2" unique_id=255089969]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 256.0
+offset_bottom = 162.0
+texture = ExtResource("4_glbon")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/instructions_2" unique_id=1382981614]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -19.0
+offset_right = 265.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
+
+[node name="evil" type="Label" parent="CanvasLayer/instructions_2" unique_id=1321812267]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_06t4h")
+text = "you have been given
+parts to repair them
+and save clockkind!"
+
+[node name="next_2" type="Button" parent="CanvasLayer/instructions_2" unique_id=379202668]
+texture_filter = 1
+layout_mode = 0
+offset_left = 189.0
+offset_top = 120.0
+offset_right = 256.0
+offset_bottom = 144.0
+theme = ExtResource("1_06t4h")
+theme_type_variation = &"FlatButton"
+text = "next"
+
+[node name="instructions_3" type="Control" parent="CanvasLayer" unique_id=1802947527]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/instructions_3" unique_id=2024766755]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 256.0
+offset_bottom = 162.0
+texture = ExtResource("5_glbon")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/instructions_3" unique_id=1037393858]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -19.0
+offset_right = 265.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
+
+[node name="evil" type="Label" parent="CanvasLayer/instructions_3" unique_id=1177314986]
+texture_filter = 1
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 73.0
+theme = ExtResource("1_06t4h")
+text = "after fixing them
+you're also gonna 
+wanna take dr.evil
+out"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_3" type="Button" parent="CanvasLayer/instructions_3" unique_id=1933244189]
+texture_filter = 1
+layout_mode = 0
+offset_left = 189.0
+offset_top = 120.0
+offset_right = 256.0
+offset_bottom = 144.0
+theme = ExtResource("1_06t4h")
+theme_type_variation = &"FlatButton"
+text = "next"
+
+[connection signal="pressed" from="CanvasLayer/play_b" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/instructions_b" to="." method="_on_instructions_b_pressed"]
+[connection signal="pressed" from="CanvasLayer/instructions_1/next_1" to="." method="_on_next_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/instructions_2/next_2" to="." method="_on_next_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/instructions_3/next_3" to="." method="_on_next_3_pressed"]
