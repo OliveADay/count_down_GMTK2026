@@ -12,6 +12,7 @@ config_version=5
 
 config/name="count_down_game"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.24824348, 0.26801145, 0.41505578, 1)
 config/icon="res://icon.svg"
 
 [display]
@@ -20,6 +21,10 @@ window/size/viewport_width=256
 window/size/viewport_height=144
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+camera="camera"
 
 [input]
 
