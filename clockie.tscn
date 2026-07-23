@@ -21,6 +21,7 @@ script = ExtResource("1_fbxie")
 metadata/_edit_group_ = true
 
 [node name="body" type="Sprite2D" parent="." unique_id=1276587280]
+z_index = 1
 texture_filter = 1
 texture = ExtResource("1_t46c1")
 hframes = 2
@@ -28,13 +29,14 @@ vframes = 2
 script = ExtResource("3_crgoy")
 
 [node name="min_hand" type="Sprite2D" parent="body" unique_id=420157294]
-z_index = 1
+z_index = 2
 texture = SubResource("CompressedTexture2D_fbxie")
 hframes = 2
 vframes = 2
 frame = 2
 
 [node name="hour_hand" type="Sprite2D" parent="body" unique_id=1078303060]
+z_index = 2
 texture = ExtResource("1_t46c1")
 hframes = 2
 vframes = 2

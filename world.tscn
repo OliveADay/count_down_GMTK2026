@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://baqiyjrxvgo1g" path="res://button_handler.gd" id="3_aqk2v"]
 [ext_resource type="Theme" uid="uid://c457voxew7rbf" path="res://main.tres" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://dupm34ibyqmjs" path="res://grandclock.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://6701dftrjmie" path="res://oldy.tscn" id="6_dwbse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
 size = Vector2(255, 143)
@@ -91,5 +92,8 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="safe_2" unique_id=891500101]
 position = Vector2(247, 64.5)
 shape = SubResource("RectangleShape2D_3xd07")
+
+[node name="oldy" parent="." unique_id=1314802920 instance=ExtResource("6_dwbse")]
+position = Vector2(182, 112)
 
 [connection signal="pressed" from="CanvasLayer/main_menu" to="CanvasLayer" method="_on_main_menu_pressed"]

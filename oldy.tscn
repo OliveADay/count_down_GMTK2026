@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cq70l0lpidi8l" path="res://oldy.png" id="1_dpdrg"]
 [ext_resource type="Theme" uid="uid://c457voxew7rbf" path="res://main.tres" id="2_g2r58"]
+[ext_resource type="Script" uid="uid://drjxyi7ttuv6k" path="res://text_bit.gd" id="3_ikmr5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdqbg"]
 size = Vector2(49, 38)
@@ -71,6 +72,7 @@ _data = {
 [node name="oldy" type="Area2D" unique_id=1314802920]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("3_ikmr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=4245287]
 texture_filter = 1
@@ -81,6 +83,7 @@ position = Vector2(0.5, -3)
 shape = SubResource("RectangleShape2D_vdqbg")
 
 [node name="Label" type="Label" parent="." unique_id=1318623576]
+visible = false
 offset_left = -10.0
 offset_top = -25.0
 offset_right = 30.0
@@ -93,8 +96,15 @@ text = "[e]"
 libraries/ = SubResource("AnimationLibrary_ikmr5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=861478555]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=610348311]
 offset_right = 256.0
 offset_bottom = 42.0
 color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=191481980]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_g2r58")
+text = "test"
