@@ -73,6 +73,7 @@ _data = {
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_ikmr5")
+text_bits = ["ok this should be working now", "so lets chat!"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=4245287]
 texture_filter = 1
@@ -104,7 +105,7 @@ offset_bottom = 42.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=191481980]
-offset_right = 40.0
+offset_right = 256.0
 offset_bottom = 23.0
 theme = ExtResource("2_g2r58")
-text = "test"
+autowrap_mode = 2

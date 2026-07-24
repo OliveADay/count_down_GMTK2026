@@ -1,11 +1,12 @@
 extends Area2D
 @export var text_bits = ["bleh", "grah"]
 var current_bit = text_bits[0]
-@export var step_time = 1
+@export var step_time = 0.05
 var current_time;
 var i = 0
 var j = 0
 var active = true
+@export var revisit_point = 2
 # for when currently on text
 var on = false
 
@@ -18,6 +19,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if text_bits.size() > j:
+		current_bit = text_bits[j]
 	if on:
 		if current_time <= 0 and active:
 			$CanvasLayer/Label.text+=current_bit[i]
@@ -36,22 +39,28 @@ func _process(delta: float) -> void:
 			else:
 				j+=1
 				if text_bits.size() > j:
-					current_bit = text_bits[j]
 					$CanvasLayer/Label.text= ""
 					active = true
 					i = 0
 				else:
 					$CanvasLayer.visible = false
 					on = false
-					j = 0
+					j = revisit_point
+					i= 0
 					$CanvasLayer/Label.text= ""
-					current_bit = text_bits[j]
+					
 		elif has_overlapping_bodies():
 			on = true
+			active = true
 			$CanvasLayer.visible = true
 			
 	if has_overlapping_bodies():
 		$Label.visible = true
 	else:
 		$Label.visible = false
+		$CanvasLayer.visible = false
+		on = false
+		j = 0
+		i= 0
+		$CanvasLayer/Label.text= ""
 			

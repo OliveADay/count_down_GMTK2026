@@ -6,12 +6,14 @@ const JUMP_VELOCITY = -400.0
 @export var step_length = 0.1
 var current_step_progress = 0
 #var safe = false
+var cheating = false
 
 
 func _physics_process(delta: float) -> void:
 	#guy gives you a bunch of clock movements, when you in range of repaired clock then you get rehealed
 	#till you get to LORD CLOCKHATER who you gotta beat
 	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
